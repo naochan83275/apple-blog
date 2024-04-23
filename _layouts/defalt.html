@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja" class="has-navbar-fixed-top" id="html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://naochan83275.github.io/cdn/sf-pro.apple.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    {% seo %}
+  </head>
+  <body
+    <header>
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/blog/">
+            <h1 id="site-title" class="blog-name">Apple blog by Naochan</h1>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">
+              website home | Webサイト ホーム
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                about
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/about/me/">
+                  about me | 自己紹介
+                </a>
+                <a class="navbar-item" href="/blog/about/">
+                  about this site | このサイトについて
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                ライトモード/ダークモード 切り替え
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="javascript:change_theme('theme-light')">
+                  ライトモード | light
+                </a>
+                <a class="navbar-item" href="javascript:change_theme('theme-dark')">
+                  ダークモード | dark
+                </a>
+                <a class="navbar-item" href="javascript:change_theme('system')">
+                  システムに合わせる | system
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br>
+    <section class="box">
+
+{{content}}
+
+    </section>
+    <footer class="footer">
+      <div class="box">
+        <p class="subtitle">
+          Naochan's blog
+        </p>
+        <p>(this site useing <a href="https://bulma.io">Bulma</a>)</p>
+        <p><a style="color:black;" href="https://naochan83275.github.io/blog/">(本家「Naochan's Blog」はこちら)</a></p>
+        <small>&copy; 2024 Naochan83275</small>
+      </div>
+    </footer>
+    <script type="text/javascript">
+function change_theme(theme){
+  if(theme == 'system'){
+    document.getElementById('html').classList.remove("theme-light", "theme-dark");
+  }else{
+    document.getElementById('html').classList.remove("theme-light", "theme-dark");
+    document.getElementById('html').classList.add(theme);
+  }
+}
+
+$(document).ready(function() {
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+  });
+});
+$(function() {
+ $('h1').addclass('title');
+ $('h2').addclass('subtitle');
+ $(".blog-name").removeclass('title');
+});
+    </script>
+  </body>
+</html>
